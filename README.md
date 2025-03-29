@@ -30,26 +30,6 @@ The repository includes the following files:
 
 4. **Output Image**: The output image file(s) will be generated and stored. You can compare the output image with the input image to verify the inversion process.
 
-### Example Workflow
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
-   ```
-
-2. **Upload Verilog and Image Files**:
-   Ensure that the Verilog files and the input image file are present in the repository directory.
-
-3. **Run the Simulation**:
-   Use a Verilog simulator (such as ModelSim, XSIM, or any other tool you prefer) to run the testbench:
-   ```bash
-   vsim -do tb.do
-   ```
 
 4. **Check Output**:
    After the simulation completes, check the generated output image file(s) and compare them with the input image to verify the inversion process.
-
-### Contact
-
-For any queries or issues, please feel free to contact the repository maintainer.
