@@ -1,3 +1,6 @@
+# EE560: Reconfigurable Computing
+## Behavioral Simulation of Convolution of Image using a Kernel
+
 # Image-Processing-Inversion-
 Behavioral Simulation of Convolution of Image using a Kernel
 
@@ -22,13 +25,46 @@ The repository includes the following files:
 
 ### How to Use
 
-1. **Upload the Verilog Files**: Ensure that all the Verilog files (`top.v`, `tb.v`, `controller.v`, `cov_inversion.v`, `rowbuffer.v`) are uploaded to the repository.
 
-2. **Upload the Input Image File**: Provide the input image file(s) that you want to process. The image should be in a compatible format that the Verilog modules can read.
+This repository contains the Verilog design and simulation files for performing a behavioral simulation of an image convolution using a kernel. The project uses FIFO and AXI streaming to process the image data. The design performs pixel inversion as part of the exercise.
 
-3. **Run the Simulation**: Use a Verilog simulator to run the testbench (`tb.v`). The simulation will process the input image and generate the inverted output image.
+### Introduction
 
-4. **Output Image**: The output image file(s) will be generated and stored. You can compare the output image with the input image to verify the inversion process.
+This project provides step-by-step instructions for performing a Verilog behavioral simulation on a BMP image. The required design source files perform the image pixel inversion using an inversion operation.
+
+### Step-by-Step Instructions
+
+#### Step 1: Creating a Project
+
+1. Create a new project in your preferred Verilog simulation tool.
+
+#### Step 2: Uploading Design Files
+
+1. Upload the provided Verilog design files to the project.
+
+#### Step 3: Configuring FIFO using FIFO Generator
+
+1. From the IP-Catalog (in Project Manager), search for `FIFO Generator` as shown in Figure 1, and double-click on the FIFO Generator to select it.
+2. Change the component name to `FIFO`. Select the `AXI Stream` option.
+3. Configure the AXI4-Stream ports by setting `TDATA NUM BYTES` to 1 and all other ports to 0, as illustrated in Figure 3.
+4. Navigate to the `Config` menu, set the `FIFO Depth` to 16 (minimum), and configure the `Data Threshold Parameters` to `Single Programmable Full Threshold Constant. 
+5. Click `OK`, and when the pop-up window appears, select `Generate` to create the FIFO.
+
+#### Step 4: Running the Simulation
+
+1. Upload the provided testbench file `tb.v` to the project.
+2. Go to the directory containing your project and navigate to the path: `projectname.sim/sim1/behav/xsim/`.
+3. Place the input `image.bmp` file in this directory.
+4. In Vivado, select `Run Simulation` → `Run Behavioral Simulation`.
+5. After running the simulation, an output `image.bmp` will be generated and stored in the same directory.
+
+#### Step 5: Verification Using Python
+
+1. You can verify the output image using Python, which generates the expected output image.
+2. The hardware implementation will produce an output image. You can compare both results for verification.
+
+
+
 
 
 4. **Check Output**:
